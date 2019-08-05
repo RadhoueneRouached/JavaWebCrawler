@@ -29,7 +29,7 @@ public class Main {
         // Extract JS libraries
         Map<String, Integer> libraries = crawler.crawl(searchTerm);
         // Sort and limit Libraries
-        Map<String, Integer> sorted = libraries.entrySet().stream().sorted(Map.Entry.<String, Integer>comparingByValue().reversed()).limit(10).collect(
+        Map<String, Integer> sorted = libraries.entrySet().stream().sorted(Map.Entry.<String, Integer>comparingByValue().reversed()).limit(5).collect(
                 toMap(e -> e.getKey(), e -> e.getValue(), (e1, e2) -> e2,
                         LinkedHashMap::new));
         // Display final result
